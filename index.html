@@ -6,7 +6,6 @@
 
 <style>
 
-/* خط ماينكرافت */
 @font-face{
 font-family:'Minecraft';
 src:url('./Minecraftia.ttf') format('truetype');
@@ -45,6 +44,7 @@ transform:translateX(-50%);
 font-size:90px;
 text-shadow:6px 6px black;
 animation:shake 2s infinite;
+z-index:5;
 }
 
 @keyframes shake{
@@ -61,7 +61,7 @@ left:50%;
 transform:translate(-50%,-50%);
 }
 
-/* أزرار ماينكرافت */
+/* الأزرار */
 button{
 display:block;
 width:420px;
@@ -96,6 +96,12 @@ transform:translate(-50%,-50%);
 width:70%;
 font-size:26px;
 line-height:1.8;
+text-align:center;
+z-index:10;
+
+background:rgba(0,0,0,0.6);
+padding:30px;
+border-radius:10px;
 }
 
 .back{
@@ -124,10 +130,23 @@ margin-top:40px;
 <button onclick="openPage('money')">Money...</button>
 </div>
 
+<!-- ✨ النص المطور -->
 <div id="eid" class="page">
-Muthi, every year you are all my Eids.  
-People celebrate their own Eid,  
-but every day with you feels like Eid. 🖤✨
+Muthi, every year you become all my Eids…  
+While people celebrate a single day,  
+every moment with you feels like a celebration of its own.
+
+You are not just someone I wish Eid with…  
+you are the reason Eid feels special in the first place.
+
+Your smile brings joy brighter than any celebration,  
+and your presence turns ordinary days into unforgettable memories.
+
+If Eid is happiness,  
+then you are happiness itself.
+
+So today, and every day…  
+I celebrate you. 🖤✨
 
 <br>
 <button class="back" onclick="backMenu()">Back</button>
@@ -135,27 +154,22 @@ but every day with you feels like Eid. 🖤✨
 
 <div id="beautiful" class="page">
 You are beautiful, Muthi.  
-Whether you are wearing Eid clothes or not,  
+Even without Eid clothes,  
 your beauty grows every Eid.
 
-I have never seen a more beautiful woman.  
-You are the beauty of all women and the queen of ladies.
+I have never seen someone more beautiful.  
+You are the queen of all women.
 
-In your Eid outfit,  
-you will be stunning, elegant, and charming.
-
-Embrace your beauty,  
-and believe that you are the most beautiful  
-woman in this world 🖤✨
-
+In Eid outfit, you will be stunning.  
+Believe that you are the most beautiful 🖤✨
 <br>
 <button class="back" onclick="backMenu()">Back</button>
 </div>
 
 <div id="money" class="page">
 If you want your full Eid money,  
-make sure you did all of these...  
-or I will start reducing it 🙂‍↔️
+make sure you did all of these…  
+or I will start reducing it 😉
 
 <br><br>
 
@@ -175,7 +189,6 @@ or I will start reducing it 🙂‍↔️
 
 <script>
 
-/* تشغيل الموسيقى (إجباري) */
 const music = document.getElementById("music")
 
 window.addEventListener("click", () => {
@@ -184,26 +197,30 @@ music.play()
 
 function openPage(page){
 
-document.getElementById("menu").style.display="none"
+document.querySelector(".title").style.display="none";
 
-document.getElementById("eid").style.display="none"
-document.getElementById("beautiful").style.display="none"
-document.getElementById("money").style.display="none"
+document.getElementById("menu").style.display="none";
 
-document.getElementById(page).style.display="block"
+document.getElementById("eid").style.display="none";
+document.getElementById("beautiful").style.display="none";
+document.getElementById("money").style.display="none";
 
-document.getElementById("click").play()
+document.getElementById(page).style.display="block";
+
+document.getElementById("click").play();
 }
 
 function backMenu(){
 
-document.getElementById("menu").style.display="block"
+document.querySelector(".title").style.display="block";
 
-document.getElementById("eid").style.display="none"
-document.getElementById("beautiful").style.display="none"
-document.getElementById("money").style.display="none"
+document.getElementById("menu").style.display="block";
 
-document.getElementById("cat").play()
+document.getElementById("eid").style.display="none";
+document.getElementById("beautiful").style.display="none";
+document.getElementById("money").style.display="none";
+
+document.getElementById("cat").play();
 }
 
 </script>
